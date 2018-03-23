@@ -17,7 +17,7 @@ title: Learn to program
 email: waltermitty121906@gmail.com
 description: >- 
   Learning and coding.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "blog" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: WalterMitty1906
 github_username:  saifeiLee
