@@ -248,6 +248,11 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
+  jekyll-feed
+  jekyll-gist
+  jekyll-paginate
+  jekyll-sitemap
+  jemoji
   minimal-mistakes-jekyll
 
 BUNDLED WITH
