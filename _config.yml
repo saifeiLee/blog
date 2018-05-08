@@ -15,7 +15,7 @@ minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt
 
 # Site Settings
 locale                   : "en-US"
-title                    : "To be better."
+title                    : "Walter Mitty"
 title_separator          : "-"
 name                     : "Walter Mitty"
 description              : "Just a blog website."
@@ -265,3 +265,10 @@ defaults:
       comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: true
