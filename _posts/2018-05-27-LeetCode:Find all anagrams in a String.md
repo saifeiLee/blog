@@ -26,7 +26,8 @@ class Solution(object):
                 del sCounter[s[i - len(p) + 1]]
         return res
 ```
-### 注意细节：
+
+_注意细节_：
 
 我最初的实现方法是 初始化sCounter时 令 list 长度和p相同，然后在for 循环当中先进行sCounter和pCounter的比较，再将窗口后移一个字符。但是这样会出错，原因在哪儿呢？？？
 
@@ -35,7 +36,5 @@ class Solution(object):
 1. 按照以上代码，初始化窗口sCounter长度为 len(p) - 1, 然后先右移添加一个字符再比较， 这样即可保证不遗漏最后一种情况。
 2. 按照我的第一种思路，但是要在循环结束后再额外比较一次sCounter和pCounter。
 
-
-
-### 总结：
+*总结*：
 要注意细节！
