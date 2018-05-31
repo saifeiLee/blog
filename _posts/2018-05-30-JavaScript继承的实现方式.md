@@ -5,7 +5,7 @@ title: JavaScript 继承的实现
 
 ## 1: Prototypal Model
 
-```javascript
+{% highlight ruby %}
 var AnswerPrototype = {
     constructor: function fn0(value) {
         this._val = value;
@@ -14,7 +14,6 @@ var AnswerPrototype = {
         return this._val;
     }
 };
-
 
 var lifeAnswer = Object.create(AnswerPrototype);
 lifeAnswer.constructor(42);
@@ -37,7 +36,7 @@ luckyAnswer.get();  // -> "7!!""
 var magicAnswer = Object.create(AnswerPrototype);
 magicAnswer.constructor(3);
 magicAnswer.get();  // -> "3!!"
-```
+{% endhighlight %}
 
 ## 2: Classical Model
 
@@ -109,4 +108,4 @@ var magicAnswer = new FirmAnswer(3);
 magicAnswer.get();   // ->"3!!"
 ```
 
-需要注意的是， `class` 语法 `没有` 给JavaScript引入新的面向对象继承模型，事实上， `class syntax` 背后的原理是和 `classical inheritence` 相同的对象模型，不同在于`class syntax`用起来更方便。
+需要注意的是， `class` 语法 `没有` 给JavaScript引入新的面向对象继承模型，事实上， `class syntax` 背后的原理和 `classical inheritence` 是相同的对象模型，不同在于`class syntax`用起来更方便。
