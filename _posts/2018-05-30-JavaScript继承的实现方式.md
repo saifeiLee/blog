@@ -39,7 +39,7 @@ magicAnswer.constructor(3);
 magicAnswer.get();  // -> "3!!"
 ```
 
-## 2:Classical Model
+## 2: Classical Model
 
 ```javascript
 function Answer(value) {
@@ -73,7 +73,7 @@ var magicAnswer = new FirmAnswer(3);
 magicAnswer.get();  // -> "3!!"
 ```
 
-## 3:ES6 Syntax
+## 3: ES6 Syntax
 
 ```javascript
 class Answer{
@@ -108,3 +108,5 @@ luckyAnswer.get();  // -> "7!!"
 var magicAnswer = new FirmAnswer(3);
 magicAnswer.get();   // ->"3!!"
 ```
+
+需要注意的是， `class` 语法 `没有` 给JavaScript引入新的面向对象继承模型，事实上， `class syntax` 背后的原理是和 `classical inheritence` 相同的对象模型，不同在于`class syntax`用起来更方便。
