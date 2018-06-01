@@ -1,5 +1,6 @@
 ---
 title: JavaScript 继承的实现
+category: Javascript
 ---
 # JavaScript 继承的三种实现方法
 
