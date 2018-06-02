@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2018-06-02T21:05:47+08:00</updated><id>http://localhost:4000/blog/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html">CSS实现FAQ Answer Revealing效果</title><link href="http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C/" rel="alternate" type="text/html" title="CSS实现FAQ Answer Revealing效果" /><published>2018-06-02T00:00:00+08:00</published><updated>2018-06-02T00:00:00+08:00</updated><id>http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C</id><content type="html" xml:base="http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C/">&lt;p&gt;&lt;strong&gt;我们需要知道：&lt;/strong&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2018-06-02T21:07:22+08:00</updated><id>http://localhost:4000/blog/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html">CSS实现FAQ Answer Revealing效果</title><link href="http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C/" rel="alternate" type="text/html" title="CSS实现FAQ Answer Revealing效果" /><published>2018-06-02T00:00:00+08:00</published><updated>2018-06-02T00:00:00+08:00</updated><id>http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C</id><content type="html" xml:base="http://localhost:4000/blog/CSS%E5%AE%9E%E7%8E%B0FAQ-Answer-Revealing%E6%95%88%E6%9E%9C/">&lt;p&gt;&lt;strong&gt;我们需要知道：&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Checkbox hack&lt;/li&gt;
@@ -43,17 +43,17 @@
 
 &lt;p&gt;当我们把元素的宽、高均设为0，且其他边设为透明，即可得到三角形。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-CSS&quot;&gt;&amp;lt;div id=&quot;demo12&quot;&amp;gt;&amp;lt;/div&amp;gt;
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&quot;demo12&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
 
-&amp;lt;style&amp;gt;
-#demo12 {
-  border: 10px solid #000;
-  border-left-color: #f00;
-  width: 0;
-  height: 0;
-}
-&amp;lt;/style&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nf&quot;&gt;#demo12&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;border-left-color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#f00&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;style&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&quot;../assets/images/triangle.png&quot; alt=&quot;Triangle&quot; title=&quot;Triangle&quot; /&gt;&lt;/p&gt;
 
