@@ -4,7 +4,7 @@ category: Javascript
 ---
 # JavaScript 继承的三种实现方法
 
-## 1: Prototypal Model
+## 1: Classical Model
 
 {% highlight ruby %}
 var AnswerPrototype = {
@@ -39,7 +39,7 @@ magicAnswer.constructor(3);
 magicAnswer.get();  // -> "3!!"
 {% endhighlight %}
 
-## 2: Classical Model
+## 2: Prototype Model
 
 ```javascript
 function Answer(value) {
