@@ -24,7 +24,6 @@ var dessertAnswer = object.create(AnswerPrototype);
 dessertAnswer.constructor(3.14159);
 dessertAnswer.get();    // ->3.14159
 
-
 var FirmAnswerPrototype = Object.create(AnswerPrototype);
 FirmAnswerPrototype.get = function fn2() {
     return AnswerPrototype.get.call(this) + "!!";
