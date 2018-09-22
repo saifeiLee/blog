@@ -272,3 +272,12 @@ defaults:
     values:
       layout: single
       author_profile: true
+  # code    
+  - scope:
+      path: ""
+      type: code
+    values:
+      layout: page
+
+collections:
+  - code
