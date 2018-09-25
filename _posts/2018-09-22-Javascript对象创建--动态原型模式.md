@@ -2,7 +2,9 @@
 title: 动态原型模式的注意事项
 ---
 
-#### 使用动态原型模式时，不能用对象字面量重写原型
+# 动态原型模式的注意事项
+
+`使用动态原型模式时，不能用对象字面量重写原型`
 
 ```javascript
 function Person(name) {
@@ -27,7 +29,7 @@ person1.getName();
 person2.getName();
 ```
 
-#### 原因:
+### 原因
 
 `new` 的实现步骤:
 
@@ -48,4 +50,4 @@ new Person("John") = {
 }
 ```
 
-当执行`var person1 = new Person('John');`时,在`new`执行过程的第三步,会执行obj.Person()方法，这时构造函数里的if语块代码会被执行，但是在此之前,`obj.prototype`已经被赋值为'Person.prototype',所以if语句里用对象字面量修改Person.prototype并不会影响obj.prototype,因此`person1.getName()`报错。
+当执行`var person1 = new Person('John');`时,在`new`执行过程的第三步,会执行obj.Person()方法，这时构造函数里的if语块代码会被执行，但是在此之前,`obj.prototype`已经被赋值为'Person.prototype',也即最初始的prototype,所以在那之后,if语句里用对象字面量修改Person.prototype并不会影响obj.prototype,因此`person1.getName()`报错。
