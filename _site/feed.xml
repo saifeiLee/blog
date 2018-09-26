@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2018-08-11T12:02:04+08:00</updated><id>http://localhost:4000/blog/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html">JS去除字符串前后空格</title><link href="http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC/" rel="alternate" type="text/html" title="JS去除字符串前后空格" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC</id><content type="html" xml:base="http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC/">&lt;p&gt;&lt;strong&gt;思路：&lt;/strong&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2018-09-26T10:54:43+08:00</updated><id>http://localhost:4000/blog/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html">简历_</title><link href="http://localhost:4000/blog/%E7%AE%80%E5%8E%86_/" rel="alternate" type="text/html" title="简历_" /><published>2018-09-24T00:00:00+08:00</published><updated>2018-09-24T00:00:00+08:00</updated><id>http://localhost:4000/blog/%E7%AE%80%E5%8E%86_</id><content type="html" xml:base="http://localhost:4000/blog/%E7%AE%80%E5%8E%86_/">&lt;h1 id=&quot;联系方式&quot;&gt;联系方式&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;手机: 18349189580&lt;/li&gt;
+  &lt;li&gt;Email: waltermitty121906@gmail.com&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;个人信息&quot;&gt;个人信息&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;李赛飞/男/1996-7-10&lt;/li&gt;
+  &lt;li&gt;成都信息工程大学软件工程学院&lt;/li&gt;
+  &lt;li&gt;毕业日期: 2019-06&lt;/li&gt;
+  &lt;li&gt;技术博客: https://saifeilee.github.io/blog/&lt;/li&gt;
+  &lt;li&gt;Github: https://github.com/saifeiLee&lt;/li&gt;
+  &lt;li&gt;目标职位: Web前端工程师&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;个人技能&quot;&gt;个人技能&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;熟悉:JavaScript/HTML/CSS3/Vue/常见的数据结构和算法&lt;/li&gt;
+  &lt;li&gt;了解:Webpack/Web语义化/Node/Python/Flutter/常用的设计模式&lt;/li&gt;
+  &lt;li&gt;英语: CET 6 (512分)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;教育经历&quot;&gt;教育经历&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2015.09-2019.06 成都信息工程大学 本科 软件工程学院&lt;/li&gt;
+  &lt;li&gt;专业排名TOP25%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;校内经历&quot;&gt;校内经历&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2016.10-2017.10 青励公益 指导教练&lt;/li&gt;
+  &lt;li&gt;工作内容:指导成都七中领导力课程班同学们的课题实践&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;实习经历&quot;&gt;实习经历&lt;/h2&gt;
+
+&lt;p&gt;- 2018.08 - 至今  成都企视云科技有限公司 Web软件工程师&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;工作内容:参加公司封闭开发，使用Vue技术栈将前端交互组件化,完成企视云管理平台前端页面的实现&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;项目经历&quot;&gt;项目经历&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2018.08 - 至今 企视云管理平台&lt;/li&gt;
+  &lt;li&gt;个人职责:使用Vue技术栈将前端交互组件化,完成企视云管理平台前端页面的实现。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;获奖情况&quot;&gt;获奖情况&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;2017.11 易阳通信杯软件创新大赛三等奖&lt;/li&gt;
+  &lt;li&gt;2016.06成都信息工程大学二等奖学金&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">联系方式</summary></entry><entry><title type="html">动态原型模式的注意事项</title><link href="http://localhost:4000/blog/Javascript%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA-%E5%8A%A8%E6%80%81%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/" rel="alternate" type="text/html" title="动态原型模式的注意事项" /><published>2018-09-22T00:00:00+08:00</published><updated>2018-09-22T00:00:00+08:00</updated><id>http://localhost:4000/blog/Javascript%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA--%E5%8A%A8%E6%80%81%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F</id><content type="html" xml:base="http://localhost:4000/blog/Javascript%E5%AF%B9%E8%B1%A1%E5%88%9B%E5%BB%BA-%E5%8A%A8%E6%80%81%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">&lt;h1 id=&quot;动态原型模式的注意事项&quot;&gt;动态原型模式的注意事项&lt;/h1&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;使用动态原型模式时，不能用对象字面量重写原型&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;friend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Nicholas&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;29&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;job&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Software Engineer&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sayName&lt;/span&gt;&lt;span class=&quot;err&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;alert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;friend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sayName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;   &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//error&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;原因&quot;&gt;原因&lt;/h2&gt;
+
+&lt;p&gt;我们先回顾一下&lt;code class=&quot;highlighter-rouge&quot;&gt;new&lt;/code&gt; 的实现步骤:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先新建一个对象&lt;/li&gt;
+  &lt;li&gt;然后将对象的原型指向 Person.prototype&lt;/li&gt;
+  &lt;li&gt;然后 Person.apply(obj)&lt;/li&gt;
+  &lt;li&gt;返回这个对象&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;伪代码表示：&lt;/p&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{};&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;__proto__&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 此时便建立了obj对象的原型链：&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// obj-&amp;gt;Person.prototype-&amp;gt;Object.prototype-&amp;gt;null&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Person&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;John&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 相当于obj.Person(&quot;John&quot;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;typeof&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;===&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'object'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;result&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 如果无返回值或者返回一个非对象值，则将obj返回作为新对象&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;请记住:&lt;code class=&quot;highlighter-rouge&quot;&gt;实例中的指针仅指向原型,而不指向构造函数&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/dynamic_proto.png&quot; alt=&quot;dynamic_prototype&quot; title=&quot;动态原型&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;从上图可以看出，重写原型对象切断了现有原型于任何之前存在的对象实例之间的联系;它们引用的自然是最初的原型。&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">动态原型模式的注意事项</summary></entry><entry><title type="html">封闭开发总结</title><link href="http://localhost:4000/blog/%E5%B0%81%E9%97%AD%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/" rel="alternate" type="text/html" title="封闭开发总结" /><published>2018-09-08T00:00:00+08:00</published><updated>2018-09-08T00:00:00+08:00</updated><id>http://localhost:4000/blog/%E5%B0%81%E9%97%AD%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/blog/%E5%B0%81%E9%97%AD%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93/">&lt;h1 id=&quot;第一周&quot;&gt;第一周&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;了解到Spring boot在后端微服务中的重要作用&lt;/li&gt;
+  &lt;li&gt;解决了若干问题：标签页实现(Vuex)、注册登录的跳转(Vue-Router)&lt;/li&gt;
+  &lt;li&gt;熟悉了Vue/Vuex/VueRouter的更多细节&lt;/li&gt;
+  &lt;li&gt;收获了一个更强大的内心&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;第二周&quot;&gt;第二周&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;通过Vuex实现了带提示的搜索框功能&lt;/li&gt;
+  &lt;li&gt;更加适应了高强度的工作，提高了抗压能力&lt;/li&gt;
+  &lt;li&gt;完成了注册页面&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;第三周&quot;&gt;第三周&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;开始完成多个页面的实现，包括找回密码页面、消息列表、消息提醒和消息显示&lt;/li&gt;
+  &lt;li&gt;解决了若干问题：找回密码页面的路由跳转无效(关于导航守卫),Vue双向绑定原理,作用域插槽的使用,element-UI的使用问题（包括el-table的删除功能中index在排序后的失准）.&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">第一周</summary></entry><entry><title type="html">JS去除字符串前后空格</title><link href="http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC/" rel="alternate" type="text/html" title="JS去除字符串前后空格" /><published>2018-08-11T00:00:00+08:00</published><updated>2018-08-11T00:00:00+08:00</updated><id>http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC</id><content type="html" xml:base="http://localhost:4000/blog/Javascript%E5%8E%BB%E9%99%A4%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%89%8D%E5%90%8E%E7%A9%BA%E6%A0%BC/">&lt;p&gt;&lt;strong&gt;思路：&lt;/strong&gt;
 先用&lt;code class=&quot;highlighter-rouge&quot;&gt;正则表达式&lt;/code&gt;匹配去除字符串头部的空格，再用非正则法去除尾端的空格。&lt;/p&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;trim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -296,6 +437,7 @@ magicAnswer.get();  // -&amp;gt; &quot;&lt;/span&gt;&lt;span class=&quot;mi&quot
 &lt;p&gt;&lt;img src=&quot;../assets/images/QuickSort2.png&quot; alt=&quot;Quick Sort Iterative Implementation&quot; title=&quot;快速排序&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;code-for-partition&quot;&gt;Code for partition&lt;/h3&gt;
+
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 本例程选择数组最后一个元素做为枢纽元&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# low --&amp;gt;首元素下标  high--&amp;gt;伪元素下表&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# 注意理解low 和 high 的含义&lt;/span&gt;
@@ -325,7 +467,7 @@ magicAnswer.get();  // -&amp;gt; &quot;&lt;/span&gt;&lt;span class=&quot;mi&quot
     &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;low&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt;
-    
+
     &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;high&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
