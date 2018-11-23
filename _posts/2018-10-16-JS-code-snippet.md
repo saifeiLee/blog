@@ -5,9 +5,14 @@ title: JS 代码段笔记
 #### 数组flatten
 
 ```javascript
-var flattened = [[1, 2, 3]].reduce((a, b) => {
-  return a.concat(b)
-})
+let arr = [1, [[2], 3, [[[4]]]], [[[[['abcd']]]]]];
+let flattern = arr => {
+  return arr.reduce((accumulator, currentItem) => {
+    return accumulator.concat(Array.isArray(currentItem) ? flattern(currentItem) : currentItem);
+  }, []);
+}
+const res = flattern(arr)
+console.log(res);
 ```
 
 #### trim
