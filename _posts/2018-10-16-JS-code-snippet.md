@@ -64,3 +64,37 @@ function curry(fn, ...args) {
   }
 }
 ```
+
+#### isArray
+
+```javascript
+Array.isArray = function(arg) {
+  return Object.prototype.toString.call(arg) === '[object Array]';
+}
+```
+
+#### 正则表达式将阿拉伯数字每隔三位用逗号分离
+
+```javascript
+"1234567800".split("").reverse().join("").replace(/(\d{3}(?=[^$]))/g, "$1,").split("").reverse().join("");
+// (?=exp)也叫零宽度正预测先行断言，它断言自身出现的位置的后面能匹配表达式exp。它预言自己出现的位置后面一定是exp,否则匹配失败。
+// /(\d{3})(?=[^$])/ 会匹配连续的三个数字，并且这三个数字不能在字符串的末尾。
+```
+
+#### 字符串首字母大写
+
+法1:
+
+```javascript
+var str = "hello world hhhh";
+var str2 = str.replace(/\b\w{1}/g, (word) => {
+  return word.toUpperCase();
+});
+console.log(str2);
+```
+
+法2:
+
+```css
+ text-transform: capitalize;
+```
