@@ -6,7 +6,7 @@ category: Javascript
 
 ## 1: Classical Model
 
-{% highlight ruby %}
+```javascript
 var AnswerPrototype = {
     constructor: function fn0(value) {
         this._val = value;
@@ -20,7 +20,7 @@ var lifeAnswer = Object.create(AnswerPrototype);
 lifeAnswer.constructor(42);
 lifeAnswer.get();   // ->42
 
-var dessertAnswer = object.create(AnswerPrototype);
+var dessertAnswer = Object.create(AnswerPrototype);
 dessertAnswer.constructor(3.14159);
 dessertAnswer.get();    // ->3.14159
 
@@ -36,7 +36,7 @@ luckyAnswer.get();  // -> "7!!""
 var magicAnswer = Object.create(AnswerPrototype);
 magicAnswer.constructor(3);
 magicAnswer.get();  // -> "3!!"
-{% endhighlight %}
+```
 
 ## 2: Prototype Model
 
