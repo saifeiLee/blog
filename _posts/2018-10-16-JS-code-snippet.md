@@ -5,6 +5,7 @@ title: JS 代码段笔记
 #### 数组flatten
 
 ```javascript
+// 法1
 let arr = [1, [[2], 3, [[[4]]]], [[[[['abcd']]]]]];
 let flattern = arr => {
   return arr.reduce((accumulator, currentItem) => {
@@ -13,6 +14,27 @@ let flattern = arr => {
 }
 const res = flattern(arr)
 console.log(res);
+
+// 法2
+function flatten (arr) {
+  while(arr.some(item => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+}
+
+// 法3
+// 递归
+function flatten(arr){
+    var res = [];
+    for(var i=0;i<arr.length;i++){
+        if(Array.isArray(arr[i])){
+            res = res.concat(flatten(arr[i]));
+        }else{
+            res.push(arr[i]);
+        }
+    }
+    return res;
+}
 ```
 
 #### trim
@@ -97,4 +119,17 @@ console.log(str2);
 
 ```css
  text-transform: capitalize;
+```
+
+#### 去除数组重复元素
+
+```javascript
+let arr = ['a', 'b', 'a', 'b', 'c', 'e', 'd', 'e', 'c', 'd', 'd', 'd', 'd'];
+let result = arr.sort().reduce((accumulator, current) => {
+    const length = accumulator.length
+    if (length === 0 || accumulator[length - 1] !== current) {
+        accumulator.push(current);
+    }
+    return accumulator;
+}, []);
 ```
