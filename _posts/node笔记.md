@@ -37,9 +37,9 @@ Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公
 - idle,prepare: 只在内部使用
 - poll(轮询),执行I/O相关的回调.
   - 当事件循环进入`poll`阶段后,如果没有正在运行的计时器(there are no timers scheduled),将发生下列两种情况之一:
-    - 轮询队列不为空，同步执行队列中的回调
+    - 轮询队列不为空，同步执行队列vs中的回调
     - 轮询队列为空,有2种情况:
-      - If scripts have been scheduled by setImmediate(), the event loop will end the poll phase and continue to the check phase to execute those scheduled scripts.
+      - If scripts hvse been scheduled by setImmediate(), the event loop will end the poll phase and continue to the check phase to execute those scheduled scripts.
       - If scripts have not been scheduled by setImmediate(), the event loop will wait for callbacks to be added to the queue, then execute them immediately.
 - check:setImmediate() callbacks are invoked here.
 - close callbacks: some close callbacks, e.g. socket.on('close', ...)
@@ -64,3 +64,8 @@ Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公
 - 设计哲学,API始终应该是异步的,即使他不必是。
   
 - everything runs in parallel except your code.
+
+### EventEmitter
+
+- 当一个`EventEmitter`对象发起一个事件,该事件的处理程序会被同步(`synchronously`)调用,事件处理函数的返回值会被废弃。
+- 事件处理函数被调用时,`this`指向EventEmitter实例。
