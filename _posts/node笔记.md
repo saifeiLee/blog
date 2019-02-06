@@ -69,3 +69,7 @@ Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公
 
 - 当一个`EventEmitter`对象发起一个事件,该事件的处理程序会被同步(`synchronously`)调用,事件处理函数的返回值会被废弃。
 - 事件处理函数被调用时,`this`指向EventEmitter实例。但当处理函数是箭头函数时,this不再指向EventEmitter实例。
+
+### Stream
+
+- The key goal of `Steam` APIs, 尤其是`stream.pipe()`, is to limit the buffering of data to acceptable levels such that sources and destinations of different speeds will not overwhelm the available memory.

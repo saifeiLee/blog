@@ -1,0 +1,2 @@
+- 关注解题过程,而非某一个特定步骤,吸收这个解题的过程
+- Focused attention/Understanding/Practice

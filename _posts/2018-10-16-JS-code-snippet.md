@@ -65,20 +65,6 @@ function eq(a, b) {
 }
 ```
 
-#### uuid in JS
-
-```javascript
-function generateUUID(){
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = (d + Math.random()*16)%16 | 0;
-        d = Math.floor(d/16);
-        return (c=='x' ? r : (r&0x7|0x8)).toString(16);
-    });
-    return uuid;
-};
-```
-
 #### General Curry Function
 
 ```javascript
@@ -161,4 +147,37 @@ function deepCopy(target){
     } 
     return _deepCopy(target);
 }
+```
+
+#### 异步JSON.parse()
+
+```javascript
+// 使用fetch API中Response对象的方法
+function asyncParse(string){  
+        return (new Response(string)).json();  
+    }
+```
+
+#### 创建密集数组
+
+```javascript
+var a = Array.apply(null, Array(3));
+
+// 初始化数组并且数组值为对应下标
+Array.apply(null, Array(3)).map(Function.prototype.call.bind(Number));
+```
+
+#### 数组乱序
+
+```javascript
+var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    sign = 1; 
+a.sort(function(a, b) {
+    //因为Math.random产生的数在0-1之间
+    //所以0.5两边的概率是相等的
+    //大于0.5时为升序，小于0.5时为降序
+    sign = (Math.random() > 0.5) ? 1 : -1;
+    return (a - b) * sign;
+ 
+});
 ```
