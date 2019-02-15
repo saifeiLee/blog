@@ -1,5 +1,5 @@
 ---
-title: toString()和valueOf()的区别:
+title: toString()和valueOf()的区别
 ---
 
 > toString()将数据对象用字符串表示,特殊的地方在于:表示对象的时候,输出"[object Object]]",表示数组的时候输出数组内容以逗号连接的字符串,相当于Array.split(',')

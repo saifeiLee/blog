@@ -279,5 +279,11 @@ defaults:
     values:
       layout: page
 
+collections_dir: my_collections
 collections:
-  - code
+  Front-End:
+    output: true,
+    permalink: /:collection/:path/
+  Data-Structure:
+    output: true,
+    permalink: /:collection/:path/

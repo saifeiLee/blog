@@ -1,36 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-01-12T14:28:08+08:00</updated><id>http://localhost:4000/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html"></title><link href="http://localhost:4000/2018-10-08-valueOf()%E5%92%8CtoString()%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="alternate" type="text/html" title="" /><published>2019-01-12T14:28:08+08:00</published><updated>2019-01-12T14:28:08+08:00</updated><id>http://localhost:4000/2018-10-08-valueOf()%E5%92%8CtoString()%E7%9A%84%E5%8C%BA%E5%88%AB</id><content type="html" xml:base="http://localhost:4000/2018-10-08-valueOf()%E5%92%8CtoString()%E7%9A%84%E5%8C%BA%E5%88%AB/">&lt;blockquote&gt;
-  &lt;p&gt;toString()将数据对象用字符串表示,特殊的地方在于:表示对象的时候,输出”[object Object]]”,表示数组的时候输出数组内容以逗号连接的字符串,相当于Array.split(‘,’)&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2019-02-09T13:37:22+08:00</updated><id>http://localhost:4000/blog/</id><title type="html">Walter Mitty</title><subtitle>Just a blog website.</subtitle><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><entry><title type="html"></title><link href="http://localhost:4000/blog/%E5%85%B7%E4%BD%93%E6%95%B0%E5%AD%A6-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" rel="alternate" type="text/html" title="&lt;具体数学&gt;" /><published>2019-01-14T00:00:00+08:00</published><updated>2019-01-14T00:00:00+08:00</updated><id>http://localhost:4000/blog/%3C%E5%85%B7%E4%BD%93%E6%95%B0%E5%AD%A6%3E%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/blog/%E5%85%B7%E4%BD%93%E6%95%B0%E5%AD%A6-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">&lt;h1 id=&quot;递归&quot;&gt;递归&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;平面上n条直线所界定的区域的最大个数?&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;L(n) = n(n+1)/2 + 1, n &amp;gt;= 0&lt;/li&gt;
+  &lt;/ul&gt;
 &lt;/blockquote&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;//先看看toString()方法的结果&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'3'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'123'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;example&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;123&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'example'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);}&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'test'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'example'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;1…n的和S(n),也称为三角形数&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;3&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;3&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;true&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;[object Object]&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;function (){console.log('example');}&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;test,example&lt;/span&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;n&lt;/th&gt;
+      &lt;th&gt;1&lt;/th&gt;
+      &lt;th&gt;2&lt;/th&gt;
+      &lt;th&gt;3&lt;/th&gt;
+      &lt;th&gt;4&lt;/th&gt;
+      &lt;th&gt;5&lt;/th&gt;
+      &lt;th&gt;6&lt;/th&gt;
+      &lt;th&gt;7&lt;/th&gt;
+      &lt;th&gt;8&lt;/th&gt;
+      &lt;th&gt;9&lt;/th&gt;
+      &lt;th&gt;10&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S(n)&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+      &lt;td&gt;10&lt;/td&gt;
+      &lt;td&gt;15&lt;/td&gt;
+      &lt;td&gt;21&lt;/td&gt;
+      &lt;td&gt;28&lt;/td&gt;
+      &lt;td&gt;36&lt;/td&gt;
+      &lt;td&gt;45&lt;/td&gt;
+      &lt;td&gt;55&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;span class=&quot;c1&quot;&gt;//再看看valueOf()方法的结果&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// &quot;3&quot;&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// true&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// {test:'123',example:123}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// function(){console.log('example');}&lt;/span&gt;
-&lt;span class=&quot;nx&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;valueOf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// ['test','example']&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;汉诺塔问题&lt;/p&gt;
+&lt;/blockquote&gt;
 
-&lt;p&gt;一般用操作符单独对对象进行转换的时候，如果对象存在valueOf或toString改写的话，就先调用改写的方法，valueOf优先级更高，如果没有被改写，则直接调用对象原型的valueOf方法。如果是弹窗的话，直接调用toString方法。&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author></entry><entry><title type="html">如何理解JavaScript中的this</title><link href="http://localhost:4000/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91/" rel="alternate" type="text/html" title="如何理解JavaScript中的this" /><published>2019-01-11T00:00:00+08:00</published><updated>2019-01-11T00:00:00+08:00</updated><id>http://localhost:4000/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91</id><content type="html" xml:base="http://localhost:4000/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91/">&lt;p&gt;我们都知道,Javascript中的&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;是函数调用时确定的,可是JS是采用词法作用域(即静态作用域)的语言,一个函数的作用域在他定义的时候就已经决定了，而this应该指向当前执行环境的作用域不是吗？我感到有点疑惑🤔,这两点不冲突吗？到底该如何理解this?&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;T(n) = 2^n - 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;约瑟夫问题的简单理解法(设每隔一个人，删去一人)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;首先要明白一个基本的事实,当总人数n是2的次幂时,第一个人幸存,当n = 2^m + l时,经过l次行刑,人数缩减成2的次幂,此时留下的第一个人即幸存者,是标号为2l + 1。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;约瑟夫问题的如何找规律&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;n&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;1&lt;/th&gt;
+      &lt;th&gt;2 3&lt;/th&gt;
+      &lt;th&gt;4 5 6 7&lt;/th&gt;
+      &lt;th&gt;8 9 10 11 12 13 14 15&lt;/th&gt;
+      &lt;th&gt;16&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;J(n)&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;1&lt;/td&gt;
+      &lt;td&gt;1 3&lt;/td&gt;
+      &lt;td&gt;1 3 5 7&lt;/td&gt;
+      &lt;td&gt;1 3  5  7  9 11 13 15&lt;/td&gt;
+      &lt;td&gt;1&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;J(2^m + l) = 2l + 1&lt;/strong&gt;&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">递归</summary></entry><entry><title type="html">如何理解JavaScript中的this</title><link href="http://localhost:4000/blog/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91/" rel="alternate" type="text/html" title="如何理解JavaScript中的this" /><published>2019-01-11T00:00:00+08:00</published><updated>2019-01-11T00:00:00+08:00</updated><id>http://localhost:4000/blog/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91</id><content type="html" xml:base="http://localhost:4000/blog/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3this%E7%9A%84%E6%8C%87%E5%90%91/">&lt;p&gt;我们都知道,Javascript中的&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;是函数调用时确定的,可是JS是采用词法作用域(即静态作用域)的语言,一个函数的作用域在他定义的时候就已经决定了，而this应该指向当前执行环境的作用域不是吗？我感到有点疑惑🤔,这两点不冲突吗？到底该如何理解this?&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;要理解this,最重要的是要明白this的由来。当一个函数被调用的时候，除了显式传入函数的参数之外，还有两个隐式参数被传入，一个是&lt;code class=&quot;highlighter-rouge&quot;&gt;arguments&lt;/code&gt;,另一个就是&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;。明白了这一点，我们就好理解为什么说&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;指向调用函数的对象.&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">我们都知道,Javascript中的this是函数调用时确定的,可是JS是采用词法作用域(即静态作用域)的语言,一个函数的作用域在他定义的时候就已经决定了，而this应该指向当前执行环境的作用域不是吗？我感到有点疑惑🤔,这两点不冲突吗？到底该如何理解this?</summary></entry><entry><title type="html">个人简历</title><link href="http://localhost:4000/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/" rel="alternate" type="text/html" title="个人简历" /><published>2018-12-13T00:00:00+08:00</published><updated>2018-12-13T00:00:00+08:00</updated><id>http://localhost:4000/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86</id><content type="html" xml:base="http://localhost:4000/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/">&lt;h1 id=&quot;李赛飞&quot;&gt;李赛飞&lt;/h1&gt;
+&lt;p&gt;要理解this,最重要的是要明白this的由来。当一个函数被调用的时候，除了显式传入函数的参数之外，还有两个隐式参数被传入，一个是&lt;code class=&quot;highlighter-rouge&quot;&gt;arguments&lt;/code&gt;,另一个就是&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;。明白了这一点，我们就好理解为什么说&lt;code class=&quot;highlighter-rouge&quot;&gt;this&lt;/code&gt;指向调用函数的对象.&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">我们都知道,Javascript中的this是函数调用时确定的,可是JS是采用词法作用域(即静态作用域)的语言,一个函数的作用域在他定义的时候就已经决定了，而this应该指向当前执行环境的作用域不是吗？我感到有点疑惑🤔,这两点不冲突吗？到底该如何理解this?</summary></entry><entry><title type="html">个人简历</title><link href="http://localhost:4000/blog/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/" rel="alternate" type="text/html" title="个人简历" /><published>2018-12-13T00:00:00+08:00</published><updated>2018-12-13T00:00:00+08:00</updated><id>http://localhost:4000/blog/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86</id><content type="html" xml:base="http://localhost:4000/blog/%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86/">&lt;h1 id=&quot;李赛飞&quot;&gt;李赛飞&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Tel: 18349189580&lt;/li&gt;
@@ -99,7 +158,7 @@
   &lt;li&gt;2016.06 成都信息工程大学二等奖学金&lt;/li&gt;
   &lt;li&gt;2017.11 易阳通信杯软件创新大赛三等奖&lt;/li&gt;
   &lt;li&gt;2018.9 成都信息工程大学三等奖学金&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">李赛飞</summary></entry><entry><title type="html">字节跳动秋招前端一面总结</title><link href="http://localhost:4000/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="alternate" type="text/html" title="字节跳动秋招前端一面总结" /><published>2018-11-23T00:00:00+08:00</published><updated>2018-11-23T00:00:00+08:00</updated><id>http://localhost:4000/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95</id><content type="html" xml:base="http://localhost:4000/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">&lt;ol&gt;
+&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">李赛飞</summary></entry><entry><title type="html">字节跳动秋招前端一面总结</title><link href="http://localhost:4000/blog/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/" rel="alternate" type="text/html" title="字节跳动秋招前端一面总结" /><published>2018-11-23T00:00:00+08:00</published><updated>2018-11-23T00:00:00+08:00</updated><id>http://localhost:4000/blog/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95</id><content type="html" xml:base="http://localhost:4000/blog/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95/">&lt;ol&gt;
   &lt;li&gt;实现一个自适应搜索框,搜索按钮为100px.输入框的长度自适应&lt;/li&gt;
   &lt;li&gt;实现三行文字超出显示省略号&lt;/li&gt;
   &lt;li&gt;css word-break属性&lt;/li&gt;
@@ -115,14 +174,14 @@
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/y1x3p6Lq/&quot;&gt;CSS 三行文字超出显示省略号 -webkit内核方法&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://jsfiddle.net/k1hvm9gf/&quot;&gt;CSS 三行文字超出显示省略号 通用浏览器解决方法&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">实现一个自适应搜索框,搜索按钮为100px.输入框的长度自适应 实现三行文字超出显示省略号 css word-break属性 http缓存 http2做了那些改进 lodash 的get方法实现 Vue-loader做了什么 块级作用于解决了什么问题？</summary></entry><entry><title type="html">Flutter Notes</title><link href="http://localhost:4000/Flutter-Notes/" rel="alternate" type="text/html" title="Flutter Notes" /><published>2018-11-22T00:00:00+08:00</published><updated>2018-11-22T00:00:00+08:00</updated><id>http://localhost:4000/Flutter-Notes</id><content type="html" xml:base="http://localhost:4000/Flutter-Notes/">&lt;h1 id=&quot;whats-revolutionary-about-flutter&quot;&gt;What’s Revolutionary about Flutter?&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">实现一个自适应搜索框,搜索按钮为100px.输入框的长度自适应 实现三行文字超出显示省略号 css word-break属性 http缓存 http2做了那些改进 lodash 的get方法实现 Vue-loader做了什么 块级作用于解决了什么问题？</summary></entry><entry><title type="html">Flutter Notes</title><link href="http://localhost:4000/blog/Flutter-Notes/" rel="alternate" type="text/html" title="Flutter Notes" /><published>2018-11-22T00:00:00+08:00</published><updated>2018-11-22T00:00:00+08:00</updated><id>http://localhost:4000/blog/Flutter-Notes</id><content type="html" xml:base="http://localhost:4000/blog/Flutter-Notes/">&lt;h1 id=&quot;whats-revolutionary-about-flutter&quot;&gt;What’s Revolutionary about Flutter?&lt;/h1&gt;
 
 &lt;ul&gt;
   &lt;li&gt;No JS Bridge, ahead of compiling&lt;/li&gt;
   &lt;li&gt;传统CSS布局，开发者不能自己创建新的布局(例如flex, grid),所以flex,grid不得不添加进CSS并在所有浏览器上实现。并且传统的布局中,CSS规则是可以相互影响的。&lt;/li&gt;
   &lt;li&gt;sliver layout model,可用于滚动,flutter的组件非常快。&lt;/li&gt;
   &lt;li&gt;In Flutter, 组件和渲染器被提出来放到了app里。&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">What’s Revolutionary about Flutter?</summary></entry><entry><title type="html">HTTP notes</title><link href="http://localhost:4000/HTTP%E7%AC%94%E8%AE%B0/" rel="alternate" type="text/html" title="HTTP notes" /><published>2018-11-18T00:00:00+08:00</published><updated>2018-11-18T00:00:00+08:00</updated><id>http://localhost:4000/HTTP%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/HTTP%E7%AC%94%E8%AE%B0/">&lt;h3 id=&quot;状态码&quot;&gt;状态码&lt;/h3&gt;
+&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">What’s Revolutionary about Flutter?</summary></entry><entry><title type="html">HTTP notes</title><link href="http://localhost:4000/blog/HTTP%E7%AC%94%E8%AE%B0/" rel="alternate" type="text/html" title="HTTP notes" /><published>2018-11-18T00:00:00+08:00</published><updated>2018-11-18T00:00:00+08:00</updated><id>http://localhost:4000/blog/HTTP%E7%AC%94%E8%AE%B0</id><content type="html" xml:base="http://localhost:4000/blog/HTTP%E7%AC%94%E8%AE%B0/">&lt;h3 id=&quot;状态码&quot;&gt;状态码&lt;/h3&gt;
 
 &lt;h4 id=&quot;1xx-信息性状态码接受的请求正在处理&quot;&gt;1XX 信息性状态码（接受的请求正在处理）&lt;/h4&gt;
 
@@ -292,7 +351,7 @@
       &lt;li&gt;HTTP2的主要技术:压缩、多路复用、TLS义务化、协商、客户端拉拽/服务器推送、流量控制、WebSocket。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">状态码</summary></entry><entry><title type="html">隐式类型转换</title><link href="http://localhost:4000/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="alternate" type="text/html" title="隐式类型转换" /><published>2018-10-19T00:00:00+08:00</published><updated>2018-10-19T00:00:00+08:00</updated><id>http://localhost:4000/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2</id><content type="html" xml:base="http://localhost:4000/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">&lt;h4 id=&quot;强弱类型&quot;&gt;强/弱类型&lt;/h4&gt;
+&lt;/ul&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">状态码</summary></entry><entry><title type="html">隐式类型转换</title><link href="http://localhost:4000/blog/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" rel="alternate" type="text/html" title="隐式类型转换" /><published>2018-10-19T00:00:00+08:00</published><updated>2018-10-19T00:00:00+08:00</updated><id>http://localhost:4000/blog/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2</id><content type="html" xml:base="http://localhost:4000/blog/JS%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/">&lt;h4 id=&quot;强弱类型&quot;&gt;强/弱类型&lt;/h4&gt;
 
 &lt;p&gt;编程语言有强类型和弱类型之分。强类型语言在编译时有更严格的类型限制规则，这些规则影响着变量赋值，返回值和函数调用。另一方面,弱类型的编程语言有着更为松散的类型规则,往往在运行时执行隐式类型转换，从而产生意料之外的结果。&lt;/p&gt;
 
@@ -394,7 +453,7 @@
   &lt;li&gt;上一步的结果为: &lt;code class=&quot;highlighter-rouge&quot;&gt;[] == 0&lt;/code&gt;,若&lt;code class=&quot;highlighter-rouge&quot;&gt;Type(x)&lt;/code&gt;为Object且&lt;code class=&quot;highlighter-rouge&quot;&gt;Type(y)&lt;/code&gt;为String或Number,返回比较&lt;code class=&quot;highlighter-rouge&quot;&gt;ToPrimitive(x) == y&lt;/code&gt;的结果。&lt;/li&gt;
   &lt;li&gt;第2步的结果:&lt;code class=&quot;highlighter-rouge&quot;&gt;“” == 0&lt;/code&gt;,根据&lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt;的比较规则，若x为String，y为Number,返回比较&lt;code class=&quot;highlighter-rouge&quot;&gt;ToNumber(x) == y&lt;/code&gt;的结果&lt;/li&gt;
   &lt;li&gt;上一步结果&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">强/弱类型</summary></entry><entry><title type="html">tabindex 笔记</title><link href="http://localhost:4000/tabindex/" rel="alternate" type="text/html" title="tabindex 笔记" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/tabindex</id><content type="html" xml:base="http://localhost:4000/tabindex/">&lt;p&gt;tabindex 的作用:使无法聚焦的DOM元素(例如div,span)变得能聚焦。有三种取值:&lt;/p&gt;
+&lt;/ol&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">强/弱类型</summary></entry><entry><title type="html">tabindex 笔记</title><link href="http://localhost:4000/blog/tabindex/" rel="alternate" type="text/html" title="tabindex 笔记" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/tabindex</id><content type="html" xml:base="http://localhost:4000/blog/tabindex/">&lt;p&gt;tabindex 的作用:使无法聚焦的DOM元素(例如div,span)变得能聚焦。有三种取值:&lt;/p&gt;
 
 &lt;ol&gt;
   &lt;li&gt;tabindex=”1”(或者任何大于1的数字),显式定义tab的顺序(不推荐)&lt;/li&gt;
@@ -402,7 +461,7 @@
   &lt;li&gt;tabindex=”-1” allows things besides links and form elements to receive “programmatic” focus, meaning focus can be set to the element through scripting, links, etc.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/32911355/whats-the-tabindex-1-in-bootstrap-for&quot;&gt;reference link&lt;/a&gt;&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">tabindex 的作用:使无法聚焦的DOM元素(例如div,span)变得能聚焦。有三种取值:</summary></entry><entry><title type="html">JS 代码段笔记</title><link href="http://localhost:4000/JS-code-snippet/" rel="alternate" type="text/html" title="JS 代码段笔记" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/JS-code-snippet</id><content type="html" xml:base="http://localhost:4000/JS-code-snippet/">&lt;h4 id=&quot;数组flatten&quot;&gt;数组flatten&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/32911355/whats-the-tabindex-1-in-bootstrap-for&quot;&gt;reference link&lt;/a&gt;&lt;/p&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">tabindex 的作用:使无法聚焦的DOM元素(例如div,span)变得能聚焦。有三种取值:</summary></entry><entry><title type="html">JS 代码段笔记</title><link href="http://localhost:4000/blog/JS-code-snippet/" rel="alternate" type="text/html" title="JS 代码段笔记" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/JS-code-snippet</id><content type="html" xml:base="http://localhost:4000/blog/JS-code-snippet/">&lt;h4 id=&quot;数组flatten&quot;&gt;数组flatten&lt;/h4&gt;
 
 &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 法1&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;arr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]]],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[[[[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'abcd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]]]]];&lt;/span&gt;
@@ -459,19 +518,6 @@
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!==&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h4 id=&quot;uuid-in-js&quot;&gt;uuid in JS&lt;/h4&gt;
-
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;generateUUID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getTime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-    &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uuid&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;xy&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;sr&quot;&gt;/g&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-        &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;floor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'x'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x7&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;mh&quot;&gt;0x8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;toString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;uuid&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h4 id=&quot;general-curry-function&quot;&gt;General Curry Function&lt;/h4&gt;
@@ -549,7 +595,37 @@
     &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
     &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_deepCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">数组flatten</summary></entry><entry><title type="html">Blob对象总结</title><link href="http://localhost:4000/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93/" rel="alternate" type="text/html" title="Blob对象总结" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93/">&lt;blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;异步jsonparse&quot;&gt;异步JSON.parse()&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// 使用fetch API中Response对象的方法&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;asyncParse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;  
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;json&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;  
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;创建密集数组&quot;&gt;创建密集数组&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 初始化数组并且数组值为对应下标&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;apply&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prototype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;call&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bind&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;数组乱序&quot;&gt;数组乱序&lt;/h4&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;9&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sign&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//因为Math.random产生的数在0-1之间&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//所以0.5两边的概率是相等的&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//大于0.5时为升序，小于0.5时为降序&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;sign&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;?&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;sign&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+ 
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Walter Mitty</name><email>waltermitty121906@gmail.com</email></author><summary type="html">数组flatten</summary></entry><entry><title type="html">Blob对象总结</title><link href="http://localhost:4000/blog/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93/" rel="alternate" type="text/html" title="Blob对象总结" /><published>2018-10-16T00:00:00+08:00</published><updated>2018-10-16T00:00:00+08:00</updated><id>http://localhost:4000/blog/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93</id><content type="html" xml:base="http://localhost:4000/blog/Blob%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93/">&lt;blockquote&gt;
   &lt;p&gt;目前，Blob对象大多是运用在，处理大文件分割上传（利用Blob中slice方法），处理图片canvas跨域(避免增加crossOrigin = “Anonymous”,生成当前域名的url，然后 URL.revokeObjectURL()释放，createjs有用到)，以及隐藏视频源路径等等。&lt;/p&gt;
 &lt;/blockquote&gt;
 
