@@ -53,12 +53,12 @@ Node.js 提供了 exports 和 require 两个对象，其中 exports 是模块公
 
 - 这两者的执行顺序受调用上下文影响。若从主模块调用(比如一个非I/O循环的上下文),执行顺序受进程性能影响，无法预测。但如果在一个I/O循环内调用的话,immediate的回调总是先执行。
 
-- The main advantage to using setImmediate() over setTimeout() is setImmediate() will always be executed before any timers if scheduled within an I/O cycle, independently of how many timers are present.
+- setImmediate()优势： setImmediate() will always be executed before any timers if scheduled within an I/O cycle, independently of how many timers are present.
 
 ##### process.nextTick()
 
 - process.nextTick()并不是事件循环的一部分,但是无论处于事件循环的哪一个阶段,`nextTickQueue`都会在当前操作完成后被处理。
-- 在任何阶段调用process.nextTick(),所有传入其中的回调都会在事件循环进入下一个阶段之前被处理。
+- 在任何阶段调用process.nextTick(),所有传入其中的回调都会在事件循环进入下一个阶段之前被处理。因此，递归调用process.nextTick()会导致I/O饿死。
 
 > 为什么允许这样？
 - 设计哲学,API始终应该是异步的,即使他不必是。
