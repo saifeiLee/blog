@@ -1,5 +1,5 @@
 ---
-title: JS 代码段笔记
+title: JavaScript Code Snippet
 ---
 
 #### 数组flatten

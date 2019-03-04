@@ -297,6 +297,7 @@ function createComparisonFunction(propertyName) {
 -`文档模式(document mode)`决定了可以使用什么功能
 
 #### DOM2和DOM3
+
 - DOM1级主要定义的是HTML和XML文档的底层结构。
 - DOM2级核心(DOM Level 2 Core)增加了更多的方法和属性;关键词：DOM2级视图、事件、样式、遍历和范围、HTML
 - 遍历即使用NodeIterator或TreeWalker对DOM执行深度优先的遍历。
