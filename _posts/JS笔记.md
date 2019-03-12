@@ -390,3 +390,13 @@ function createComparisonFunction(propertyName) {
 #### 为什么 `let` 可以实现IIFE在for循环中的作用？
 
 - 在每一次迭代中,都会从上一次迭代的结果中创建一个新的同名变量。( On each iteration, the loop creates a new variable and initializes it to the value of the variable with the same name from the previous iteration.)
+
+#### WeakSet
+
+- WeakSet成员只能是对象。
+- 成员对象弱引用 -> 成员对象可能再垃圾回收机制运行前后有不同 -> ES6规定不可遍历。
+- 利用WeakSet成员对象弱引用的特性，可用于存储DOM节点。
+
+#### Map
+
+- 传统Object键值对是‘字符串--值’的对应，Map提供了更完善的'值--值'的Hash结构。
