@@ -400,3 +400,27 @@ function createComparisonFunction(propertyName) {
 #### Map
 
 - 传统Object键值对是‘字符串--值’的对应，Map提供了更完善的'值--值'的Hash结构。
+
+#### this
+
+```javascript
+var value = 1;
+
+var foo = {
+  value: 2,
+  bar: function () {
+    return this.value;
+  }
+}
+console.log((foo.bar = foo.bar)()); // output: undefined
+console.log((false || foo.bar)());  // output: undefined
+console.log((foo.bar, foo.bar)());  // output: undefined
+```
+
+##### (foo.bar = foo.bar)()
+
+有赋值操作符，查看规范 11.13.1 Simple Assignment (=):
+
+> Let rval be GetValue(rref).
+
+因为使用了 GetValue，所以返回的值不是 Reference 类型，
