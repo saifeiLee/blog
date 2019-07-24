@@ -15,3 +15,7 @@ There’s no way to opt out of strict mode inside classes.
 1. 只能在子类的constructor()中使用。
 2. 必须在调用this之前使用，因为super()是负责初始化this的
 3. 唯一可以避免调用super()的方式是在constructor()中返回一个对象。
+
+## Modules
+
+1. keep in mind that no matter how many times you use a module in import statements, the module will execute only once. After the code to import the module executes, the instantiated module is kept in memory and reused whenever another import statement references it.
