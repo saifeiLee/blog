@@ -1,0 +1,16 @@
+@startuml
+participant "用户（客户端or前端）" as user
+participant "业务服务器端" as business
+participant "视频加密服务" as media_service
+participant "阿里云" as aliyun
+autonumber
+note over user,aliyun: 加密流程
+user -> aliyun: 通过cstore上传视频到阿里云
+aliyun -> media_service: 通知视频上传结果
+media_service -> aliyun: 将视频下载到本地
+note right of media_service: 为什么不直接上传到视频加密服务的原因是自己的服务器承受不了高并发的上传压力
+media_service -> media_service: 使用ffmpeg进行视频加密
+media_service -> aliyun: 将加密好的视频切片和m3u8文件上传到阿里云
+media_service -> business: 通知业务加密结果
+note over user,aliyun: 播放流程省略
+@enduml
