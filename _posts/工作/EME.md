@@ -17,3 +17,7 @@
 7. `MediaKeySession`对象接收到`message event`, app向证书服务器发送一个消息
 8. app接收到证书服务的响应，使用MediaKeySession的`update`方法把数据传给CDM
 9. CDM使用证书里的密钥解密
+
+## Q: 浏览器是怎么得知媒体数据是加密的
+
+加密信息属于媒体容器文件的元信息。浏览器可以读取到。
