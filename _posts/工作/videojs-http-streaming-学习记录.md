@@ -3,7 +3,8 @@
 1. AES-128的密钥长度必须是16位
 2. 修改`handleKeyResponse`方法中key的处理逻辑
 3. videojs插件判断的方式：advance plugin extends from `Plugin`, but basic plugin is just function.
-4. 
+4. http-streaming.js里调用了`registerSourceHandler`添加handler, HLS的handler是添加在`Html5 tech`下了。handlers的注册逻辑`handlers.splice(index, 0, handlers)`,保证最新的handler在数组的第一项。`selectHandler`的逻辑是 遍历handler数组，返回第一个满足playType的handler
+
 
 ## 未解决
 
@@ -30,4 +31,8 @@
 
 ### 事件模型
 
-player.src --> autoSetup(创建videojs实例)
+   源码在videojs/events.js
+
+### setSourceHelper的原理
+
+### 如何实现tech插件化，使得flv.js的接入成为可能
