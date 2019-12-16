@@ -1,3 +1,5 @@
+# videojs
+
 ##  已解决
 
 1. AES-128的密钥长度必须是16位
@@ -36,3 +38,12 @@
 ### setSourceHelper的原理
 
 ### 如何实现tech插件化，使得flv.js的接入成为可能
+
+
+
+### flv播放流程
+
+1. player.src()方法
+   1. 如果传入的是string,调用`filterSource()`方法转换为srcObj数组
+2. player.loadTech_方法，创建(tech)flv实例 -> 调用videojs-flv构造函数 -> 因为video-flv继承于Html5/Tech, 所以会调用Tech.setSrc -> Tech_setSrc方法确定sourceHandler
+3. Html5.nativeSourceHandler.handleSource方法调用videoFlv.setSrc方法，执行`attachMediaElement() & load()`
