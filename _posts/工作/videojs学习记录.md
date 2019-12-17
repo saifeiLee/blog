@@ -6,7 +6,8 @@
 2. 修改`handleKeyResponse`方法中key的处理逻辑
 3. videojs插件判断的方式：advance plugin extends from `Plugin`, but basic plugin is just function.
 4. http-streaming.js里调用了`registerSourceHandler`添加handler, HLS的handler是添加在`Html5 tech`下了。handlers的注册逻辑`handlers.splice(index, 0, handlers)`,保证最新的handler在数组的第一项。`selectHandler`的逻辑是 遍历handler数组，返回第一个满足playType的handler
-
+5. `options.techOrder`会被遍历，调用`player.loadTech`,发现何时的之后break循环
+6. Videojs的核心：1. 代码设计（组件机制、插件机制、中间件机制）；2. 测试工具（Karma）; 3. 工程化方案
 
 ## 未解决
 
@@ -16,20 +17,25 @@
 
 ### Player类做了什么
 
-   1. Player.src: 更新src到cache
+   1.  Player.src()
+      - 给Player设置srcObject, 异步执行middleware.setSource(player, src, next), 在`next`回调中更新srcObject
    2. 执行中间件
    3. 执行registerTech, 默认注册Html5和Tech, Tech是媒体播放控制器的基础类
+   4. 注册基本children组件(例如MediaLoader, LoadingSpinner...)
 
 ### Component类的功能
 
    Q: Component.setTimeout()的作用以及为什么这么做？
 
    ---
-   1. 对window.setTimeout做一层封装，为了更方便的处理clear逻辑
+   1. 对window.setTimeout做一层封装，为了更方便的处理clear逻辑(??? 怎么方便了呢？)
+      > 答: 方便用Component.clearTimeout和Component.dispose进行清除
 
 ### middleware有哪些作用
 
-    1. middleware.use()方法注册中间件，VHS就是使用这个方法注册中间件的,VHS注册的中间件对象格式{setSource, setCurrentTime, play}
+ > With middleware, you are now able to interact with and change how the player and the tech talk to each other.
+
+    1. middleware.use()方法注册中间件，VHS就是使用这个方法注册中间件的,VHS注册的中间件人会的对象格式setSource方法必须有
 
 ### 事件模型
 
@@ -39,11 +45,9 @@
 
 ### 如何实现tech插件化，使得flv.js的接入成为可能
 
-
-
 ### flv播放流程
 
 1. player.src()方法
    1. 如果传入的是string,调用`filterSource()`方法转换为srcObj数组
-2. player.loadTech_方法，创建(tech)flv实例 -> 调用videojs-flv构造函数 -> 因为video-flv继承于Html5/Tech, 所以会调用Tech.setSrc -> Tech_setSrc方法确定sourceHandler
+2. 在MediaLoader中调用player.loadTech_方法，创建(tech)flv实例 -> 调用videojs-flv构造函数 -> 因为video-flv继承于Html5/Tech, 所以会调用Tech.setSrc -> Tech.setSrc方法确定sourceHandler
 3. Html5.nativeSourceHandler.handleSource方法调用videoFlv.setSrc方法，执行`attachMediaElement() & load()`
