@@ -1,4 +1,4 @@
-# videojs
+## videojs
 
 ## 已解决
 
@@ -8,21 +8,31 @@
 4. http-streaming.js里调用了`registerSourceHandler`添加handler, HLS的handler是添加在`Html5 tech`下了。handlers的注册逻辑`handlers.splice(index, 0, handlers)`,保证最新的handler在数组的第一项。`selectHandler`的逻辑是 遍历handler数组，返回第一个满足playType的handler
 5. `options.techOrder`会被遍历，调用`player.loadTech`,发现合适的之后break循环
 6. Videojs的核心：1. 代码设计（组件机制、插件机制、中间件机制）；2. 测试工具（Karma）; 3. 工程化方案
-7. flv播放流程
+7. player.src(), 如果传入的是string,调用`filterSource()`方法转换为srcObj数组
+8. flv播放流程
 
    1. videojs 实例化Player组件，Player组件有一系列默认子组件: MediaLoader, LoadingSpinner...
    2. 在MediaLoader中调用player.loadTech_方法，添加Html5 Tech, 这是默认的Tech
    3. 实例化完成后，执行player.src()方法
-      - 如果传入的是string,调用`filterSource()`方法转换为srcObj数组
-   4. 调用`player.loadTech_()`,移除当前html5 Tech, 改为flv tech, 实例化`Flv Tech Class` -> 调用videojs-flv构造函数 -> 因为video-flv继承于Html5->Tech, 所以会调用Tech.setSource -> Tech.setSource方法确定sourceHandler
-   5. 此时注册的handler有默认的http-streaming和html5，都无法处理flv, 所以fallback到native source handler
-   6. Html5.nativeSourceHandler.handleSource方法调用videoFlv.setSrc方法，执行`attachMediaElement() & load()`
+      - 通过selectSource确定当前src对应的tech
+      - 调用`player.loadTech_()`,移除当前html5 Tech, 改为flv tech, 实例化`Flv Tech Class` -> 调用videojs-flv构造函数 -> 因为video-flv继承于Html5->Tech, 所以会调用Tech.setSource -> Tech.setSource方法确定sourceHandler
+   4. 此时注册的handler有默认的http-streaming和html5，都无法处理flv, 所以fallback到native source handler
+   5. 执行Html5.nativeSourceHandler.handleSource,此时分两种情况：
+      1. currentTech.setSrc不存在，将会执行Html5.setSrc,将我们传入的src挂载到player实例上
+      2. 若插件实现了setSrc方法，将调用此方法。在videojs-flv插件中，`setSrc`完成了flv的实例化操作和`attachMediaElement() & load()`, 视频开始加载
 
-8. SourceHandler什么时候确定的
-
+9. SourceHandler什么时候确定的
    在videojs加载时注册了html5 handler.(Tech.js)、 videojs-http-streaming handler
-9. Component.setTimeout()的作用
-   1. 对window.setTimeout做一层封装，方便用Component.clearTimeout和Component.dispose进行清除
+10. Component.setTimeout()的作用
+    1. 对window.setTimeout做一层封装，方便用Component.clearTimeout和Component.dispose进行清除
+11. flv插件的isSupported()/isSupported()/canPlayType() 会用于videojs的tech select
+12. 点击播放后, 会触发`player`类的`this.el_.play()`
+13. 点击播放后是如何播放的
+   触发`player.handleTechPlay_`
+14. Component类的功能
+    1. Component类是所有UI类的基础类，封装了组件注册的方法
+    2. 同时封装了一些DOM相关的方法，Component既是一个JS对象，也是一个Dom对象
+    3. 封装了定时器和定时器解除的方法
 
 ## 未解决
 
@@ -38,8 +48,6 @@
    3. 执行registerTech, 默认注册Html5和Tech, Tech是媒体播放控制器的基础类
    4. 注册通用的children组件(例如MediaLoader, LoadingSpinner...)
 
-### Component类的功能
-
 ### middleware有哪些作用
 
  > With middleware, you are now able to interact with and change how the player and the tech talk to each other.
@@ -48,8 +56,22 @@
 
 ### 事件模型
 
-   源码在videojs/events.js
+   1. 源码在videojs/events.js
 
 ### setSourceHelper的原理
 
 ### 如何实现tech插件化，使得flv.js的接入成为可能
+
+### overrideNative做了什么
+
+### hls waiting_
+
+this.consecutiveUpdates >= 5 --> this.waiting_() --> trigger `hls-unknown-waiting`
+
+## http-streaming
+
+### 问题
+
+#### setupMediaGroups作用和原理
+
+#### this.masterPlaylistLoader_.on('loadedplaylist')时间监听和处理的原理,如何利用hls-unknown-waiting
