@@ -1,4 +1,4 @@
-# videojs
+## videojs
 
 ## 已解决
 
@@ -29,6 +29,10 @@
 12. 点击播放后, 会触发`player`类的`this.el_.play()`
 13. 点击播放后是如何播放的
    触发`player.handleTechPlay_`
+14. Component类的功能
+    1. Component类是所有UI类的基础类，封装了组件注册的方法
+    2. 同时封装了一些DOM相关的方法，Component既是一个JS对象，也是一个Dom对象
+    3. 封装了定时器和定时器解除的方法
 
 ## 未解决
 
@@ -44,8 +48,6 @@
    3. 执行registerTech, 默认注册Html5和Tech, Tech是媒体播放控制器的基础类
    4. 注册通用的children组件(例如MediaLoader, LoadingSpinner...)
 
-### Component类的功能
-
 ### middleware有哪些作用
 
  > With middleware, you are now able to interact with and change how the player and the tech talk to each other.
@@ -54,10 +56,22 @@
 
 ### 事件模型
 
-   源码在videojs/events.js
+   1. 源码在videojs/events.js
 
 ### setSourceHelper的原理
 
 ### 如何实现tech插件化，使得flv.js的接入成为可能
 
 ### overrideNative做了什么
+
+### hls waiting_
+
+this.consecutiveUpdates >= 5 --> this.waiting_() --> trigger `hls-unknown-waiting`
+
+## http-streaming
+
+### 问题
+
+#### setupMediaGroups作用和原理
+
+#### this.masterPlaylistLoader_.on('loadedplaylist')时间监听和处理的原理,如何利用hls-unknown-waiting
