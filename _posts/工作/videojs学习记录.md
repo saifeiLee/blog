@@ -85,6 +85,11 @@ this.consecutiveUpdates >= 5 --> this.waiting_() --> trigger `hls-unknown-waitin
 
 #### master-playlist-controller.js
 
+start() --> load() --> SegmentLoader的load()方法 --> loadSegment_() --> mediaSegmentRequest() --> segmentRequestFinished_() --> processSegmentResponse_()
+--> `handleSegment_()` --> sourceUpdater_.appendBuffer()
+
+#### handleSegment_() 做了什么事
+
 ### mse
 
 #### 基本步骤
