@@ -2,9 +2,7 @@
 
 ## 已解决
 
-1. AES-128的密钥长度必须是16位
-2. 修改`handleKeyResponse`方法中key的处理逻辑
-3. videojs插件判断的方式：advance plugin extends from `Plugin`, but basic plugin is just function.
+1. videojs插件判断的方式：advance plugin extends from `Plugin`, but basic plugin is just function.
 4. http-streaming.js里调用了`registerSourceHandler`添加handler, HLS的handler是添加在`Html5 tech`下了。handlers的注册逻辑`handlers.splice(index, 0, handlers)`,保证最新的handler在数组的第一项。`selectHandler`的逻辑是 遍历handler数组，返回第一个满足playType的handler
 5. `options.techOrder`会被遍历，调用`player.loadTech`,发现合适的之后break循环
 6. Videojs的核心：1. 代码设计（组件机制、插件机制、中间件机制）；2. 测试工具（Karma）; 3. 工程化方案
@@ -67,33 +65,3 @@
 ### hls waiting_
 
 this.consecutiveUpdates >= 5 --> this.waiting_() --> trigger `hls-unknown-waiting`
-
----
-
-## http-streaming
-
-### 笔记
-
-1. xhr请求存在一个队列中，进行管理（发起和abort）
-2. HlsSourceHandler.handleSource方法挂载了`tech.hls`
-
-### 问题
-
-#### setupMediaGroups作用和原理
-
-#### this.masterPlaylistLoader_.on('loadedplaylist')时间监听和处理的原理,如何利用hls-unknown-waiting
-
-#### master-playlist-controller.js
-
-start() --> load() --> SegmentLoader的load()方法 --> loadSegment_() --> mediaSegmentRequest() --> segmentRequestFinished_() --> processSegmentResponse_()
---> `handleSegment_()` --> sourceUpdater_.appendBuffer()
-
-#### handleSegment_() 做了什么事
-
-### mse
-
-#### 基本步骤
-
-1. mse作为中间层，将其绑定到video.src上
-2. 对mediaSouce实例添加事件监听`sourceopen`
-3. 根据mimeType创建sourceBuffer对象
