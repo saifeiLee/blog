@@ -3,7 +3,6 @@
    a. 我们可以给media element 设置一个`MediaKeys Object`, 如果没有，首先通过`navigator.requestMediaKeySystemAccess()`去查看可用的密钥系统，并选择可用的密钥系统。（Note that initialization of the MediaKeys object should happen before the first encrypted event.）
    b. `setMediaKeys()`将MediaKeys绑定到media element
 
-
 ## workflow
 
 1. web-app 尝试播放加密媒体流
