@@ -1,0 +1,12 @@
+@startuml
+participant "业务方" as User
+participant "后端" as Backend_Service
+participant "前端播放器" as Player
+autonumber
+User --> Backend_Service: 用户鉴权
+Backend_Service --> User: 生成令牌(token)
+User --> Player: m3u8_Url + token
+Player --> Backend_Service: keyURI + token,请求密钥
+Backend_Service --> Player: 密钥
+note right of Player: 使用密钥解密.ts文件并播放
+@enduml
