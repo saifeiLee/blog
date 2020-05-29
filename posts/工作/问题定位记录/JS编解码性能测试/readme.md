@@ -25,3 +25,5 @@ string -> arraybuffer
 | 方案一 | 1669.564ms |
 | 方案二 | 42.146ms   |
 | 方案三 | 153.823ms  |
+
+> 代码地址：<https://github.com/saifeiLee/js-encoding-performance>

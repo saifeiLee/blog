@@ -22,10 +22,10 @@ IM-SDK V4.0版本，在React Native应用中，发出的信息正常，web端正
 ### 第二步-推测问题成因
 
 代码中text的解码使用了一个名叫`arraybuffer-to-string`的npm包，这个包有两个入口，分别用于兼容node环境和浏览器环境:
-![ab2str-pkg.json]('./assets/ab2str-pkg.png')
+![ab2str-pkg.json](./assets/ab2str-pkg.png)
 
 其中node环境直接采用`Buffer.from()`方法解码，浏览器环境采用`TextDecoder`对象，通过添加日志发现，React Native环境运行的是浏览器入口中的方法：
-![arraybuffer-to-string]('assets/browser-string-fromCharCode.png')
+![arraybuffer-to-string](assets/browser-string-fromCharCode.png)
 
 由于ReactNative环境中不存在`TextDecoder`对象，因此最终字符解码采用的是`String.fromCharCode`方法。进一步推测这个方法的解码有问题。
 
