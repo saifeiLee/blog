@@ -17,11 +17,11 @@
 - A: [jest 'this' undefined 错误](https://github.com/facebook/jest/issues/3970#issuecomment-328703877), 在ES6模块中，babel直接将全局this转换为undefined.解决方法：添加babel ignore，同时在jest.config.js中同样添加到transformIgnorePatterns。
 - 解决过程：先确认是babel处理方式导致的，使用最小demo复现，对比node_modules引入和单文件引入是否一致，确认是babel配置问题后，想办法让babel忽略该文件
 
-### Q: 如何避免函数内的函数调用对测试单元的影响
+### Q: 如何避免测试单元内的函数调用对测试单元的影响
 
 - A:使用`jest.spyOn()`和`mockReturnValue()`来mock函数调用的返回
 
-### Q: 如何避免mock数据时，immutable的数据无法直接在浏览器中JSON.stringify
+### Q: 如何避免TypeError: Converting circular structure to JSON
 
 - 使用辅助函数处理数据，将重复的字段过滤掉
 
