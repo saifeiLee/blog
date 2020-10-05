@@ -50,3 +50,14 @@ JSON.stringify(o, function(key, value) {
 
 1. 某一版本对baseModel做了改动，单元测试帮助快速确定影响范围:
 ![base-model-snapshot](./assets/base-model-snapshot.jpg)
+
+### 手册
+
+1. 对于事件上抛，对上抛的数据内容做单测，保证重构过程后上抛的数据格式不应该变化.
+2. 如何mock目标内的函数调用？
+
+```javascript
+import * as module form 'xxx';
+
+const spy = jest.spyOn(module, 'methodName');
+```
