@@ -42,11 +42,11 @@ IM-SDK V4.0版本，在React Native应用中，发出的信息正常，web端正
  console.log(decodedStr);
 ```
 
-结果解析正常, 说明String方法本身是没有问题
+结果解析正常, 说明String方法本身是没有问题的。
 
-## 解决方式
+<!-- ## 解决方式
 
-统一采用`Buffer`对象进行解码，针对RN兼容，引入`buffer polyfill`
+统一采用`Buffer`对象进行解码，针对RN兼容，引入`buffer polyfill` -->
 
 ---
 
