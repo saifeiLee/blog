@@ -1,4 +1,4 @@
-# JavaScript WebSocket sdk 实践总结
+# JavaScript WebSocket sdk 实践分享
 <!-- - JS编解码简介 -->
 <!-- - websocketSDK实现思路 -->
 
@@ -87,5 +87,43 @@ class Person {
     }
   };
 }
+
+```
+
+## JavaScript二进制编解码方案简介
+
+JavaScripts采用`UCS-2`编码，这种编码类似UTF-16, 每个字符占两个字节。所以可以用以下方法将JavaScript字符编码为ArrayBuffer:
+
+```javascript
+function str2ab(str) {
+  var buf = new ArrayBuffer(str.length*2); // 每个字符占两个字节
+  var bufView = new Uint16Array(buf);
+  for (var i=0, strLen=str.length; i < strLen; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+  return buf;
+}
+```
+
+解码方法：
+
+```javascript
+function ab2str(buf) {
+  return String.fromCharCode.apply(null, new Uint16Array(buf));
+}
+```
+
+## 如何让websocket-sdk兼容微信小程序
+
+微信小程序环境下，websocket的接口与浏览器环境下不一致,差异体现在websocket相关的API不同。
+
+|            | 初始化                   | websocket API Style                 |
+|------------|--------------------------|-------------------------------------|
+| 浏览器     | new WebSocket(url)       | websocket.onopen = () => {}         |
+| 微信小程序 | wx.connectSocket(object) | websocket.onOpen(function callback) |
+
+借助`适配器模式`,我们可以在适配器层抹平差异，对上层提供一致的访问接口。
+
+```javascript
 
 ```
