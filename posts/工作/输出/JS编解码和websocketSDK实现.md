@@ -122,8 +122,47 @@ function ab2str(buf) {
 | 浏览器     | new WebSocket(url)       | websocket.onopen = () => {}         |
 | 微信小程序 | wx.connectSocket(object) | websocket.onOpen(function callback) |
 
-借助`适配器模式`,我们可以在适配器层抹平差异，对上层提供一致的访问接口。
+借助`适配器模式`,我们实现一个`WebSocketAdaptor`, 内部保存一个`websocket controller`实例，`websocket controller`有两种，分别对应浏览器的`Websocket`和`Mini-Program websocket`, 在controller中我们提供一致的对外访问接口，调用websocket实例上的API, 从而抹平了对上层提供一致的访问接口。
 
 ```javascript
+// WebSocketAdaptor
 
+class WebSocketAdaptor {
+  private webSocket: WeChatWebSocket | BrowserWebSocket
+  constructor(env, url) {
+    if (env === 'wechat') {
+      this.webSocket = new WeChatWebSocket(url)
+    } else if (env === 'browser') {
+      this.webSocket = new BrowserWebSocket(url)
+    }
+  }
+
+  onOpen (cb) {
+    this.webSocket.onOpen(cb)
+  }
+
+  onMessage (cb) {
+    this.webSocket.onMessage(cb)
+  }
+
+  onError (cb) {
+    this.webSocket.onError(cb)
+  }
+
+  onClose (cb) {
+    this.webSocket.onClose(cb)
+  }
+
+  send (data) {
+    this.webSocket.send(data)
+  }
+
+  getReadyState () {
+    return this.webSocket.getReadyState()
+  }
+
+  close (data?) {
+    this.webSocket.close(data)
+  }
+}
 ```
