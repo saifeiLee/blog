@@ -280,54 +280,75 @@ class WebSocketAdaptor {
 ```javascript
 
 class ReadBlock {
-  pos: number;
   dv: DataView;
+  pos: number;
+  size: number;
 
   constructor(buffer: ArrayBuffer) {
-    this.pos = 0
     this.dv = new DataView(buffer)
+    this.pos = 0
+    this.size = buffer.byteLength
   }
 
-  ReadInt16Field: () => number = () => {
-    const val0 = this.dv.getUint8(this.pos++)
-    const val1 = this.dv.getUint8(this.pos++)
-    const ret = (val1 << 8) | val0
-    return ret
-  }
-
-  ReadInt32Field: () => number = () => {
-    const val0 = this.dv.getUint8(this.pos++)
-    const val1 = this.dv.getUint8(this.pos++)
-    const val2 = this.dv.getUint8(this.pos++)
-    const val3 = this.dv.getUint8(this.pos++)
-    const ret = (val3 << 24) | (val2 << 16) | (val1 << 8) | val0
-    return ret
-  }
-
-  ReadInt64Field: () => number = () => {
-    let ret = 0
-    let step = 1
-    for (let i = 0; i < 8; i++) {
-      ret += (step * this.dv.getUint8(this.pos++))
-      step *= 256
+  GetHead: (index: number, type: number) => boolean = (index, type) => {
+    if (this.pos >= this.size) {
+      return false
     }
+    const head = this.dv.getUint8(this.pos)
+    if ((head >> 3) != index || (head & 0x07) != type) {
+      return false
+    }
+    this.pos++
+    return true
+  }
+
+  GetIntValue: () => number = () => {
+    let ret = 0
+    let val = this.dv.getUint8(this.pos++)
+    let step = 1
+    while (val > 127) {
+      val &= 0x7F
+      ret += (val * step)
+      step *= 128
+      val = this.dv.getUint8(this.pos++)
+    }
+    ret += (val * step)
     return ret
   }
 
-  ReadStringField: () => string = () => {
+  ReadIntField: (index: number) => number = (index) => {
+    if (!this.GetHead(index, 0)) {
+      return 0
+    }
+    const val = this.GetIntValue()
+    return val
+  }
+
+  ReadStringField: (index: number) => string = (index) => {
     let str = ''
-    const len = this.ReadInt16Field()
+    if (!this.GetHead(index, 2)) {
+      return str
+    }
+
+    const len = this.GetIntValue()
     for (let i = 0; i < len; i++) {
       str += String.fromCharCode(this.dv.getUint8(this.pos++))
     }
+
     return str
   }
 
-  ReadArrayBufferField: () => ArrayBuffer = () => {
-    const len = this.ReadInt16Field()
-    const buf = this.dv.buffer.slice(this.pos, this.pos + len)
-    this.pos += len
-    return buf
+  ReadArrayField: (index: number) => ArrayBuffer = (index) => {
+    const arr = []
+    if (!this.GetHead(index, 2)) {
+      return new Uint8Array(arr).buffer
+    }
+
+    const len = this.GetIntValue()
+    for (let i = 0; i < len; i++) {
+      arr.push(this.dv.getUint8(this.pos++))
+    }
+    return new Uint8Array(arr).buffer
   }
 }
 
@@ -338,34 +359,42 @@ class WriteBlock {
     this.arr = []
   }
 
-  WriteInt16Field: (val: number) => void = val => {
+  SetHead: (index: number, type: number) => void = (index, type) => {
+    const val = (index << 3) | type
     this.arr.push(val & 0xFF)
-    this.arr.push((val >> 8) & 0xFF)
   }
 
-  WriteInt32Field: (val: number) => void = val => {
-    this.arr.push(val & 0xFF)
-    this.arr.push((val >> 8) & 0xFF)
-    this.arr.push((val >> 16) & 0xFF)
-    this.arr.push((val >> 24) & 0xFF)
-  }
-
-  WriteInt64Field: (val: number) => void = val => {
-    let ret = val
-    for (let i = 0; i < 8; i++) {
-      this.arr.push(ret & 0xFF)
-      ret /= 256
+  SetIntValue: (val: number) => void = (val) => {
+    while (val > 127) {
+      this.arr.push(val % 128 + 128)
+      val = Math.floor(val / 128)
     }
+    this.arr.push(val)
   }
 
-  WriteStringField: (str: string) => void = str => {
-    this.WriteInt16Field(str.length)
+  WriteIntField: (index: number, val: number) => void = (index, val) => {
+    this.SetHead(index, 0)
+    this.SetIntValue(val)
+  }
+
+
+  WriteBooleanField: (index: number, val: boolean) => void = (index, val) => {
+    this.SetHead(index, 0)
+    this.SetIntValue(+val)
+  }
+
+  WriteStringField: (index: number, str: string) => void = (index, str) => {
+    this.SetHead(index, 2)
+    this.SetIntValue(str.length)
+
     for (let i = 0; i < str.length; ++i) {
       this.arr.push(str.charCodeAt(i))
     }
   }
-  WriteArrayBufferField: (buf: ArrayBuffer) => void = buf => {
-    this.WriteInt16Field(buf.byteLength)
+
+  WriteArrayBufferField: (index: number, buf: ArrayBuffer) => void = (index, buf) => {
+    this.SetHead(index, 2)
+    this.SetIntValue(buf.byteLength)
     const ui8 = new Uint8Array(buf)
     for (let i = 0; i < ui8.length; i++) {
       this.arr.push(ui8[i])
