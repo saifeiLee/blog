@@ -58,7 +58,7 @@ Uint8 -> string (使用String.fromCharCode, 生成**UTF-16**格式字符串) -> 
 
 ---
 
-## 破案
+### 再次验证
 
 ```javascript
 const  {Base64} = require('js-base64');
