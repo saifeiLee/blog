@@ -44,13 +44,21 @@ IM-SDK V4.0版本，在React Native应用中，发出的信息正常，web端正
 
 结果解析正常, 说明String方法本身是没有问题的。
 
-<!-- ## 解决方式
+### 第四步
 
-统一采用`Buffer`对象进行解码，针对RN兼容，引入`buffer polyfill` -->
+重新审视整个编/解码流程：
+
+编码：
+json -> string -> base64编码 -> atob编码（生成`Binary String`）-> 基于Binary-String 生成ArrayBuffer(**Uint8**)
+
+解码：
+Uint8 -> string (使用String.fromCharCode, 生成**UTF-16**格式字符串) -> JSON
+
+对比发现：解码过程其实缺失了对`binary string`的处理。
 
 ---
 
-## 破案
+### 再次验证
 
 ```javascript
 const  {Base64} = require('js-base64');
