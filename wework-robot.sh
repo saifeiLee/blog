@@ -9,3 +9,4 @@ curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7a9039ed-3df3-45f2-89
             "mentioned_list":["@all"]
         }
    }'
+1
