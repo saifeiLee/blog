@@ -5,7 +5,7 @@ curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=7a9039ed-3df3-45f2-89
    {
         "msgtype": "text",
         "text": {
-            "content": "温馨提醒：自由日啊自由日，大家早点回吧",
+            "content": "Hey～俊男靓女们, Geek Day不加班,记得多做点自己喜欢的事儿哦。",
             "mentioned_list":["@all"]
         }
    }'
